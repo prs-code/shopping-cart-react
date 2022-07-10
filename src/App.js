@@ -1,13 +1,21 @@
 import './App.css';
-//Components
-import Store from './components/Store';
+import {Routes, Route, Navigate} from 'react-router-dom';
 
-import ProductContext from './context/ProductContext';//Context
+//Components :
+import Store from './components/Store';
+import ProductsDetails from './components/ProductsDetails';
+
+//Context :
+import ProductContext from './context/ProductContext';
 
 function App() {
   return (
     <ProductContext>
-      <Store />
+      <Routes>
+        <Route path='/products' element={ <Store /> }/>
+        <Route path='/products/:id' element={ <ProductsDetails /> } />
+        <Route path='/*' element={ <Navigate to='/products' />} />
+      </Routes>
     </ProductContext>
   );
 }
