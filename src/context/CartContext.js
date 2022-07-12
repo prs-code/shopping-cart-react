@@ -8,7 +8,7 @@ const initialState = { //firs input value useReducer
 }
 
 const cartReducer = (state, action) => {
-    switch(action.type) {
+     switch(action.type) {
         case "ADD_ITEM" : //The first time the product is added to the cart
             if (!state.selectedItems.find(item => item.id === action.payload.id)) {
                 state.selectedItems.push({
@@ -26,13 +26,13 @@ const cartReducer = (state, action) => {
                 ...state,
                 selectedItems: [...newSelectedItem]
             }
-        case "INCREASE_ITEM" :// when selecting a product multi times
+        case "INCREASE" :// when selecting a product multi times
             const indexI = state.selectedItems.findIndex(item => item.id === action.payload.id);
             state.selectedItems[indexI].quantity++;
             return {
                 ...state,
             }
-        case "DECREASE_ITEM" :// when decreased number of a product
+        case "DECREASE" :// when decreased number of a product
             const indexD = state.selectedItems.findIndex(item => item.id === action.payload.id)
             state.selectedItems[indexD].quantity--;
             return {
