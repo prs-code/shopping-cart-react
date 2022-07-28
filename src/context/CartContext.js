@@ -32,7 +32,7 @@ const cartReducer = (state, action) => {
             return {
                 ...state,
                 selectedItems: [...newSelectedItem],
-                ...sumItems(state.selectedItems)
+                ...sumItems(newSelectedItem)
             }
         case "INCREASE" :// when selecting a product multi times
             const indexI = state.selectedItems.findIndex(item => item.id === action.payload.id);
