@@ -23,6 +23,9 @@ const Product = ({productData}) => {
                 <div className={styles.buttonContainer}>
                     {quantityCounter(state, productData.id) === 1 && <button className={styles.smallButton} onClick={() => dispatch({type: "REMOVE_ITEM", payload: productData})}><img src={trash} alt="trash-icon"/></button>}
                     {quantityCounter (state, productData.id) > 1 && <button className={styles.smallButton} onClick={() => dispatch({type: "DECREASE", payload: productData})}>-</button>}
+
+                    {quantityCounter(state, productData.id) > 0 && <span className={styles.counter}>{quantityCounter(state, productData.id)}</span>}
+
                     {
                         isInCart(state, productData.id) ?
                         <button className={styles.smallButton} onClick={() => dispatch({type: "INCREASE", payload: productData})}>+</button> :

@@ -83,3 +83,14 @@
 .buttonContainer img {
     width: 20px;
 }
+.counter {
+    color: #fdb130;
+    width: 45px !important;
+    height: 35px !important;
+    font-size: 1.3rem !important;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 1px 11px;
+    margin: 0 2px;
+    border-radius: 5px;
+}
